@@ -1,50 +1,50 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version change: (template) → 1.0.0
+- Modified principles: 全て新規（テンプレートのプレースホルダから初版を作成）
+- Added sections: Core Principles ×4, 制約, 開発ワークフロー, Governance
+- Removed sections: なし
+- Follow-up TODOs: なし
+-->
+# claude-spec-kit Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. コンテキスト効率が第一
+Claude Code に毎回読み込ませるもの（CLAUDE.md、スキルの一覧行、MCP ツール定義）は最小に保たなければならない（MUST）。
+スキル本文は呼び出し時にだけ読まれるので、手順だけを書き、条件付きでしか要らない詳細は `rules/*.md` に分離する。
+根拠: このプロジェクトの目的そのものであり、常時コストは全セッションに掛かる。
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. 計測してから変える
+`.claude/skills/speckit-*` や `.specify/` を変更したら `node bench/measure.mjs` を実行し、
+`bench/requirements/<skill>.md` のチェックリストに照合しなければならない（MUST）。数字と要件の両方を満たさない変更は取り込まない。
+目標: 常時 ≤ 400（キット分）、core ワークフロー ≤ 8,000 トークン。
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. 手順は落とさない
+圧縮は「冗長性の除去」であって「手順の省略」ではない。スキルから振る舞いを削る場合は、
+`bench/requirements/` の該当項目を先に更新し、理由を `AI/DECISIONS.md` に残さなければならない（MUST）。
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. 重い作業は委譲する
+実装・調査・大量のファイル読み込みはサブエージェントに委譲し、メインの会話には結論と変更点だけを残す（SHOULD）。
+完了を報告する前に、テストやビルドを実際に実行して確認する（MUST）。
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## 制約
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+- 生成物と報告は日本語。スキルの指示文は英語（トークン効率）。
+- ブランチの作成・切替はユーザーが行う。スキルは現在のブランチで作業する。
+- `context/`（サブモジュール）の中身はこのリポジトリでは編集しない。上流で変更してから参照を進める。
+- 依存を増やさない: `bench/` は Node.js 標準モジュールのみ。
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## 開発ワークフロー
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- 機能追加は `/speckit-specify` → (`/speckit-clarify`) → `/speckit-plan` → `/speckit-tasks` → `/speckit-implement` の順。
+- スキルの変更はフォルダ構成が変わるなら `AI/STRUCTURE.md` を同じコミットで更新する。
+- コミットは変更の理由を書く（何をしたかは diff で分かる）。
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+この憲章は他の慣習に優先する。改定は `/speckit-constitution` で行い、semver で版を上げる
+（MAJOR: 原則の削除・再定義、MINOR: 原則・セクションの追加、PATCH: 文言）。
+レビュー時は原則 I〜IV への適合を確認する。
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-09-18 | **Last Amended**: 2026-09-18
