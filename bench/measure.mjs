@@ -105,17 +105,28 @@ function describeInvocable(name, file) {
   const readsSeen = new Set();
   const reads = [];
   const skillDir = path.dirname(file);
-  for (const m of body.matchAll(/[\w$@{}./-]+\.(?:md|json|ya?ml|txt|xml|csv)\b/g)) {
-    const p = m[0]
-      .replace('${CLAUDE_PLUGIN_ROOT}', '.claude')
-      .replace(/\{\{KIRO_DIR\}\}/g, '.kiro')
-      .replace(/^@/, '')
-      .replace(/^\.\//, '');
-    if (readsSeen.has(p) || /(^|\/)scripts?\//.test(p) || p === path.basename(file)) continue;
-    readsSeen.add(p);
-    const candidates = [path.join(skillDir, p), path.join(root, p)];
-    const abs = candidates.find((c) => existsSync(c) && statSync(c).isFile());
-    if (abs) reads.push({ file: rel(abs), tokens: estimateTokens(read(abs)) });
+  // A reference is "conditional" when the line that mentions it is itself
+  // conditional (if/when/unsure/remain/only ...) -- e.g. a rules file the
+  // skill reads only when clarification markers remain. Those are
+  // reported separately and excluded from the workflow sums, which
+  // therefore measure the common path, not the worst case.
+  for (const line of body.split('\n')) {
+    // "if it exists" is an existence check, not a branch in the workflow:
+    // in a real project the file exists, so the read always happens.
+    const conditional =
+      /\b(if|when|unsure|remain|only|optional|case)\b/i.test(line.replace(/\bif\s+(it\s+)?exists\b/gi, '').replace(/\bIF EXISTS\b/g, ''));
+    for (const m of line.matchAll(/[\w$@{}./-]+\.(?:md|json|ya?ml|txt|xml|csv)\b/g)) {
+      const p = m[0]
+        .replace('${CLAUDE_PLUGIN_ROOT}', '.claude')
+        .replace(/\{\{KIRO_DIR\}\}/g, '.kiro')
+        .replace(/^@/, '')
+        .replace(/^\.\//, '');
+      if (readsSeen.has(p) || /(^|\/)scripts?\//.test(p) || p === path.basename(file)) continue;
+      readsSeen.add(p);
+      const candidates = [path.join(skillDir, p), path.join(root, p)];
+      const abs = candidates.find((c) => existsSync(c) && statSync(c).isFile());
+      if (abs) reads.push({ file: rel(abs), tokens: estimateTokens(read(abs)), conditional });
+    }
   }
   return {
     name,
@@ -123,7 +134,8 @@ function describeInvocable(name, file) {
     listingTokens: estimateTokens(listing),
     bodyTokens: estimateTokens(body),
     reads,
-    readsTokens: reads.reduce((a, r) => a + r.tokens, 0),
+    readsTokens: reads.filter((r) => !r.conditional).reduce((a, r) => a + r.tokens, 0),
+    conditionalReadsTokens: reads.filter((r) => r.conditional).reduce((a, r) => a + r.tokens, 0),
   };
 }
 
@@ -202,12 +214,13 @@ if (jsonOnly) {
   console.log(`  TOTAL                ${alwaysOn.total}\n`);
 
   console.log('## on-invoke (per skill/command)');
-  console.log(`  ${pad('name', 26)} ${pad('listing', 8)} ${pad('body', 7)} ${pad('reads', 7)} reads`);
+  console.log(`  ${pad('name', 26)} ${pad('listing', 8)} ${pad('body', 7)} ${pad('reads', 7)} ${pad('(cond.)', 8)} reads  [conditional in brackets]`);
   for (const i of invocables) {
-    console.log(`  ${pad(i.name, 26)} ${pad(i.listingTokens, 8)} ${pad(i.bodyTokens, 7)} ${pad(i.readsTokens, 7)} ${i.reads.map((r) => r.file.replace(/^\.specify\//, '')).join(' ')}`);
+    const readList = i.reads.map((r) => (r.conditional ? `[${r.file.split('/').pop()}]` : r.file.replace(/^\.specify\//, ''))).join(' ');
+    console.log(`  ${pad(i.name, 26)} ${pad(i.listingTokens, 8)} ${pad(i.bodyTokens, 7)} ${pad(i.readsTokens, 7)} ${pad(i.conditionalReadsTokens, 8)} ${readList}`);
   }
   console.log('');
-  console.log('## workflows (sum of body + reads per step)');
+  console.log('## workflows (sum of body + unconditional reads per step)');
   for (const f of flows) {
     console.log(`  ${pad(f.name, 12)} ${pad(f.tokens, 7)} ${f.steps.map((s) => `${s.step}${s.missing ? '(missing)' : ''}=${s.tokens}`).join(' + ')}`);
   }

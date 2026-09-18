@@ -1,7 +1,7 @@
 ---
 name: "speckit-constitution"
-description: "Create or update the project constitution from interactive or provided principle inputs."
-argument-hint: "Principles or values for the project constitution"
+description: "Create or update the project constitution (.specify/memory/constitution.md) from interactive or provided principle inputs."
+argument-hint: "Principles or governance changes to record"
 compatibility: "Requires spec-kit project structure with .specify/ directory"
 metadata:
   author: "github-spec-kit"
@@ -10,102 +10,28 @@ user-invocable: true
 disable-model-invocation: false
 ---
 
-## User Input
+## Input and scope
 
-```text
-$ARGUMENTS
-```
+`$ARGUMENTS` = principles / governance changes. The constitution and the report are in Japanese.
 
-You **MUST** consider the user input before proceeding (if not empty).
+This command only edits `.specify/memory/constitution.md`. Classify every part of the input: constitution content vs. other intents (implementing, generating code, refactoring, building, deploying). Never execute the latter and never touch application sources, tests, deployment files or templates — record them as deferred intents and list them at the end under `Next Actions` with the fitting follow-up command (e.g. `/speckit-specify`), without invoking it (omit the section if there are none). Unsure whether something is constitution content → ask before changing anything.
 
-## Scope Guard
+## 1. Resolve the scaffold
 
-This command's own work is limited to updating the project constitution itself. Dependent templates
-and commands read the constitution at runtime and are not modified here.
+Run `.specify/scripts/powershell/resolve-template.ps1 constitution-template -Json` from the repo root and use `TEMPLATE_CONTENT` as the structure. Failure → stop and report; never continue with a partial template. If `.specify/memory/constitution.md` exists, read it as the source of current values and amendments and keep whatever still applies; otherwise the template is the initial document. Never write back to template layers. Find every `[ALL_CAPS]` placeholder; if the user asked for a specific number of principles, follow it.
 
-- Classify every part of the user input as either constitution content or a separate,
-  non-governance intent.
-- If the input includes feature implementation, code generation, refactoring, building, or
-  deployment requests, you **MUST NOT** execute them. Extract them as deferred intents instead.
-- You **MUST NOT** create, modify, or delete application source files, feature routes,
-  components, tests, deployment files, or other artifacts unrelated to the constitution
-  workflow.
-- If it is unclear whether an instruction is constitution content, ask for clarification before
-  making changes.
-- After completing the constitution update, include a `Next Actions` section for each deferred
-  intent. List the original intent and suggest the appropriate follow-up Spec Kit command, such
-  as `/speckit-specify`, without invoking it.
-- If there are no non-governance intents, omit the `Next Actions` section.
+## 2. Values
 
-## Outline
+User input first, then infer from the repo (README, docs, previous constitution). `RATIFICATION_DATE` = original adoption date (unknown → ask or `TODO(RATIFICATION_DATE): ...`); `LAST_AMENDED_DATE` = today when anything changes. `CONSTITUTION_VERSION` follows semver — MAJOR: principle removed/redefined incompatibly; MINOR: principle/section added or materially expanded; PATCH: wording, typos, clarifications. Ambiguous bump → state the reasoning before deciding.
 
-You are updating the project constitution at `.specify/memory/constitution.md`. The active
-constitution scaffold is resolved at command time from `constitution-template` through the Spec Kit
-preset/template resolution stack.
+## 3. Write
 
-Follow this execution flow:
+Replace every placeholder with concrete text (any deliberately retained slot must be justified). Keep the heading hierarchy; drop template comments once replaced unless still useful. Each principle: name line, non-negotiable rules (declarative, testable; "should" → MUST/SHOULD with rationale), rationale when not obvious. Governance: amendment procedure, versioning policy, compliance review. Put a Sync Impact Report as an HTML comment at the top (old → new version, modified principles incl. renames, added/removed sections, deferred TODOs) — scratch material for review, removed before commit. Critical unknowns → `TODO(<FIELD>): explanation`, also listed in the report.
 
-1. Run `.specify/scripts/powershell/resolve-template.ps1 constitution-template -Json` from the repository root and parse `TEMPLATE_CONTENT` as the active template.
-   - The shared resolver applies project overrides, composing preset layers, and extension layers
-     before the core template fallback. It MUST succeed before continuing.
-   - If it fails, stop and report the resolution error; do not continue with only one contributing
-     template layer.
-   - If `.specify/memory/constitution.md` exists, load it as the source of current project-specific
-     values and amendments. Preserve information that is still applicable when applying the newly
-     resolved scaffold.
-   - If it does not exist, use the resolved template as the initial document.
-   - Do not write back to any versioned template layer.
-   - Identify every placeholder token of the form `[ALL_CAPS_IDENTIFIER]`.
-   **IMPORTANT**: The user might require less or more principles than the ones used in the template. If a number is specified, respect that - follow the general template. You will update the doc accordingly.
+## 4. Validate and save
 
-2. Collect/derive values for placeholders:
-   - If user input (conversation) supplies a value, use it.
-   - Otherwise infer from existing repo context (README, docs, prior constitution versions if embedded).
-   - For governance dates: `RATIFICATION_DATE` is the original adoption date (if unknown ask or mark TODO), `LAST_AMENDED_DATE` is today if changes are made, otherwise keep previous.
-   - `CONSTITUTION_VERSION` must increment according to semantic versioning rules:
-     - MAJOR: Backward incompatible governance/principle removals or redefinitions.
-     - MINOR: New principle/section added or materially expanded guidance.
-     - PATCH: Clarifications, wording, typo fixes, non-semantic refinements.
-   - If version bump type ambiguous, propose reasoning before finalizing.
+No unexplained bracket tokens; version line matches the report; dates in YYYY-MM-DD; headings exactly as the template; one blank line between sections; no trailing whitespace. Partial updates still go through validation and the version decision. Overwrite `.specify/memory/constitution.md` — the only file written.
 
-3. Draft the updated constitution content using the resolved template as the required structure:
-   - Replace every placeholder with concrete text (no bracketed tokens left except intentionally retained template slots that the project has chosen not to define yet—explicitly justify any left).
-   - Preserve heading hierarchy and comments can be removed once replaced unless they still add clarifying guidance.
-   - Ensure each Principle section: succinct name line, paragraph (or bullet list) capturing non‑negotiable rules, explicit rationale if not obvious.
-   - Ensure Governance section lists amendment procedure, versioning policy, and compliance review expectations.
+## Report
 
-4. Produce a Sync Impact Report as an HTML comment at the top of the constitution file after update.
-   This report is temporary scratch material for human review of the amendment, not governance
-   content; it is expected to be removed before the amended constitution file is committed.
-   - Version change: old → new
-   - List of modified principles (old title → new title if renamed)
-   - Added sections
-   - Removed sections
-   - Follow-up TODOs if any placeholders intentionally deferred.
-
-5. Validation before final output:
-   - No remaining unexplained bracket tokens.
-   - Version line matches report.
-   - Dates ISO format YYYY-MM-DD.
-   - Principles are declarative, testable, and free of vague language ("should" → replace with MUST/SHOULD rationale where appropriate).
-
-6. Write the completed constitution back to `.specify/memory/constitution.md` (overwrite).
-
-7. Output a final summary to the user with:
-   - New version and bump rationale.
-   - Any TODO placeholders or deferred items requiring manual follow-up.
-   - Suggested commit message (e.g., `docs: amend constitution to vX.Y.Z (principle additions + governance update)`).
-   - A `Next Actions` section for any deferred non-governance intents.
-
-Formatting & Style Requirements:
-
-- Use Markdown headings exactly as in the template (do not demote/promote levels).
-- Wrap long rationale lines to keep readability (<100 chars ideally) but do not hard enforce with awkward breaks.
-- Keep a single blank line between sections.
-- Avoid trailing whitespace.
-
-If the user supplies partial updates (e.g., only one principle revision), still perform validation and version decision steps.
-
-If critical info missing (e.g., ratification date truly unknown), insert `TODO(<FIELD_NAME>): explanation` and include in the Sync Impact Report under deferred items.
-
-Write only `.specify/memory/constitution.md`; do not create or modify template source files.
+New version and bump rationale; TODOs / deferred items; suggested commit message (e.g. `docs: amend constitution to vX.Y.Z (...)`); `Next Actions` if any intents were deferred.
