@@ -29,3 +29,13 @@ Claude Codeはスキル/コマンドの**名前と説明だけ**を起動時に�
 ## 変種の比較
 
 `bench/results/` に `<日時>_<ブランチ@sha>.json` で残るので、最適化前後や別ブランチのファイルを見比べる。
+
+## 結果の比較（--compare）
+
+```
+node bench/measure.mjs --compare A.json B.json   # 指定した2件を比較
+node bench/measure.mjs --compare                 # bench/results/ の最新2件を比較
+```
+
+always-on / skills・commands / workflows の3表を `項目 | 前 | 後 | 差分` で表示する。計測も保存もしない。
+引数なしのときはファイル名の辞書順（日時順）で最新2件を選ぶ。`--root` で測った外部キットの結果（`_kit-` を含む）は選択対象から除く。

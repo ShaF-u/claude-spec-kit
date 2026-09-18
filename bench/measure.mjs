@@ -9,6 +9,7 @@
 // Then sums on-invoke per workflow from bench/workflows.json.
 //
 // Usage: node bench/measure.mjs [--root DIR] [--label NAME] [--json]
+//        node bench/measure.mjs --compare A.json B.json   (no measuring, no saving)
 import { existsSync, readFileSync, readdirSync, writeFileSync, mkdirSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -16,9 +17,13 @@ import { execFileSync } from 'node:child_process';
 import { estimateTokens } from './lib/tokens.mjs';
 import { splitFrontmatter } from './lib/frontmatter.mjs';
 import { listMcpTools } from './lib/mcp-tools.mjs';
+import { runCompare } from './lib/compare.mjs';
 
 const benchDir = path.dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
+if (args.includes('--compare')) {
+  process.exit(await runCompare(args.slice(args.indexOf('--compare') + 1), benchDir));
+}
 const argValue = (flag) => {
   const i = args.indexOf(flag);
   return i >= 0 ? args[i + 1] : undefined;
