@@ -1,0 +1,5 @@
+{
+  "core": ["speckit-constitution", "speckit-specify", "speckit-plan", "speckit-tasks", "speckit-implement"],
+  "core+clarify": ["speckit-constitution", "speckit-specify", "speckit-clarify", "speckit-plan", "speckit-tasks", "speckit-implement"],
+  "full": ["speckit-constitution", "speckit-specify", "speckit-clarify", "speckit-plan", "speckit-checklist", "speckit-tasks", "speckit-analyze", "speckit-implement", "speckit-converge"]
+}
