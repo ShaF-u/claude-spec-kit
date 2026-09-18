@@ -1,0 +1,312 @@
+{
+  "label": "kit-openspec",
+  "root": "C:\\Users\\koyo\\AppData\\Local\\Temp\\claude\\C--Users-koyo-Desktop-bat\\45314acc-7707-4cc6-b9f9-2f86617a3e4f\\scratchpad\\kits\\inst\\openspec",
+  "measuredAt": "2026-09-18T09:16:45.626Z",
+  "alwaysOn": {
+    "claudeMd": 0,
+    "skillListing": 462,
+    "commandListing": 128,
+    "agentListing": 0,
+    "mcpTools": 0,
+    "total": 590
+  },
+  "claudeMd": [],
+  "skills": [
+    {
+      "name": "openspec-apply-change",
+      "file": ".claude/skills/openspec-apply-change/SKILL.md",
+      "listingTokens": 62,
+      "bodyTokens": 2584,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 231
+    },
+    {
+      "name": "openspec-archive-change",
+      "file": ".claude/skills/openspec-archive-change/SKILL.md",
+      "listingTokens": 63,
+      "bodyTokens": 3609,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 231
+    },
+    {
+      "name": "openspec-explore",
+      "file": ".claude/skills/openspec-explore/SKILL.md",
+      "listingTokens": 82,
+      "bodyTokens": 5573,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        },
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 462
+    },
+    {
+      "name": "openspec-propose",
+      "file": ".claude/skills/openspec-propose/SKILL.md",
+      "listingTokens": 78,
+      "bodyTokens": 3942,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        },
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 462
+    },
+    {
+      "name": "openspec-sync-specs",
+      "file": ".claude/skills/openspec-sync-specs/SKILL.md",
+      "listingTokens": 62,
+      "bodyTokens": 3838,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 231
+    },
+    {
+      "name": "openspec-update-change",
+      "file": ".claude/skills/openspec-update-change/SKILL.md",
+      "listingTokens": 115,
+      "bodyTokens": 2184,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 231
+    }
+  ],
+  "commands": [
+    {
+      "name": "/opsx:apply",
+      "file": ".claude/commands/opsx/apply.md",
+      "listingTokens": 18,
+      "bodyTokens": 2584,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 231
+    },
+    {
+      "name": "/opsx:archive",
+      "file": ".claude/commands/opsx/archive.md",
+      "listingTokens": 19,
+      "bodyTokens": 3852,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 231
+    },
+    {
+      "name": "/opsx:explore",
+      "file": ".claude/commands/opsx/explore.md",
+      "listingTokens": 26,
+      "bodyTokens": 4886,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        },
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 462
+    },
+    {
+      "name": "/opsx:propose",
+      "file": ".claude/commands/opsx/propose.md",
+      "listingTokens": 23,
+      "bodyTokens": 3936,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        },
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 462
+    },
+    {
+      "name": "/opsx:sync",
+      "file": ".claude/commands/opsx/sync.md",
+      "listingTokens": 15,
+      "bodyTokens": 3851,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 231
+    },
+    {
+      "name": "/opsx:update",
+      "file": ".claude/commands/opsx/update.md",
+      "listingTokens": 27,
+      "bodyTokens": 2198,
+      "reads": [
+        {
+          "file": "openspec/config.yaml",
+          "tokens": 231
+        }
+      ],
+      "readsTokens": 231
+    }
+  ],
+  "agents": [],
+  "mcp": [],
+  "workflows": [
+    {
+      "name": "core",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "core+clarify",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "full",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-checklist",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-analyze",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-converge",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    }
+  ]
+}

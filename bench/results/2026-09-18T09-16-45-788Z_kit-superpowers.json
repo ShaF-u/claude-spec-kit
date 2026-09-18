@@ -1,0 +1,329 @@
+{
+  "label": "kit-superpowers",
+  "root": "C:\\Users\\koyo\\AppData\\Local\\Temp\\claude\\C--Users-koyo-Desktop-bat\\45314acc-7707-4cc6-b9f9-2f86617a3e4f\\scratchpad\\kits\\inst\\superpowers",
+  "measuredAt": "2026-09-18T09:16:45.788Z",
+  "alwaysOn": {
+    "claudeMd": 0,
+    "skillListing": 558,
+    "commandListing": 0,
+    "agentListing": 0,
+    "mcpTools": 0,
+    "total": 558
+  },
+  "claudeMd": [],
+  "skills": [
+    {
+      "name": "brainstorming",
+      "file": ".claude/skills/brainstorming/SKILL.md",
+      "listingTokens": 55,
+      "bodyTokens": 3816,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "file": ".claude/skills/dispatching-parallel-agents/SKILL.md",
+      "listingTokens": 35,
+      "bodyTokens": 1483,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "executing-plans",
+      "file": ".claude/skills/executing-plans/SKILL.md",
+      "listingTokens": 31,
+      "bodyTokens": 540,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "file": ".claude/skills/finishing-a-development-branch/SKILL.md",
+      "listingTokens": 34,
+      "bodyTokens": 1912,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "receiving-code-review",
+      "file": ".claude/skills/receiving-code-review/SKILL.md",
+      "listingTokens": 65,
+      "bodyTokens": 1485,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "requesting-code-review",
+      "file": ".claude/skills/requesting-code-review/SKILL.md",
+      "listingTokens": 34,
+      "bodyTokens": 700,
+      "reads": [
+        {
+          "file": ".claude/skills/requesting-code-review/code-reviewer.md",
+          "tokens": 1419
+        }
+      ],
+      "readsTokens": 1419
+    },
+    {
+      "name": "subagent-driven-development",
+      "file": ".claude/skills/subagent-driven-development/SKILL.md",
+      "listingTokens": 29,
+      "bodyTokens": 8078,
+      "reads": [
+        {
+          "file": ".claude/skills/subagent-driven-development/implementer-prompt.md",
+          "tokens": 1586
+        },
+        {
+          "file": ".claude/skills/subagent-driven-development/task-reviewer-prompt.md",
+          "tokens": 2264
+        },
+        {
+          "file": ".claude/skills/subagent-driven-development/re-review-prompt.md",
+          "tokens": 1193
+        },
+        {
+          "file": ".claude/skills/requesting-code-review/code-reviewer.md",
+          "tokens": 1419
+        }
+      ],
+      "readsTokens": 6462
+    },
+    {
+      "name": "systematic-debugging",
+      "file": ".claude/skills/systematic-debugging/SKILL.md",
+      "listingTokens": 29,
+      "bodyTokens": 2335,
+      "reads": [
+        {
+          "file": ".claude/skills/systematic-debugging/root-cause-tracing.md",
+          "tokens": 1330
+        },
+        {
+          "file": ".claude/skills/systematic-debugging/defense-in-depth.md",
+          "tokens": 913
+        },
+        {
+          "file": ".claude/skills/systematic-debugging/condition-based-waiting.md",
+          "tokens": 882
+        }
+      ],
+      "readsTokens": 3125
+    },
+    {
+      "name": "test-driven-development",
+      "file": ".claude/skills/test-driven-development/SKILL.md",
+      "listingTokens": 27,
+      "bodyTokens": 2223,
+      "reads": [
+        {
+          "file": ".claude/skills/test-driven-development/writing-good-tests.md",
+          "tokens": 2074
+        }
+      ],
+      "readsTokens": 2074
+    },
+    {
+      "name": "using-git-worktrees",
+      "file": ".claude/skills/using-git-worktrees/SKILL.md",
+      "listingTokens": 55,
+      "bodyTokens": 1644,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "using-superpowers",
+      "file": ".claude/skills/using-superpowers/SKILL.md",
+      "listingTokens": 44,
+      "bodyTokens": 729,
+      "reads": [
+        {
+          "file": ".claude/skills/using-superpowers/references/codex-tools.md",
+          "tokens": 1195
+        },
+        {
+          "file": ".claude/skills/using-superpowers/references/pi-tools.md",
+          "tokens": 311
+        },
+        {
+          "file": ".claude/skills/using-superpowers/references/antigravity-tools.md",
+          "tokens": 375
+        },
+        {
+          "file": ".claude/skills/using-superpowers/references/hermes-tools.md",
+          "tokens": 491
+        }
+      ],
+      "readsTokens": 2372
+    },
+    {
+      "name": "verification-before-completion",
+      "file": ".claude/skills/verification-before-completion/SKILL.md",
+      "listingTokens": 65,
+      "bodyTokens": 847,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "writing-plans",
+      "file": ".claude/skills/writing-plans/SKILL.md",
+      "listingTokens": 26,
+      "bodyTokens": 1735,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "writing-skills",
+      "file": ".claude/skills/writing-skills/SKILL.md",
+      "listingTokens": 29,
+      "bodyTokens": 6568,
+      "reads": [
+        {
+          "file": ".claude/skills/using-superpowers/references/codex-tools.md",
+          "tokens": 1195
+        },
+        {
+          "file": ".claude/skills/using-superpowers/references/gemini-tools.md",
+          "tokens": 1150
+        },
+        {
+          "file": ".claude/skills/writing-skills/anthropic-best-practices.md",
+          "tokens": 11567
+        },
+        {
+          "file": ".claude/skills/writing-skills/persuasion-principles.md",
+          "tokens": 1479
+        },
+        {
+          "file": ".claude/skills/writing-skills/testing-skills-with-subagents.md",
+          "tokens": 3143
+        }
+      ],
+      "readsTokens": 18534
+    }
+  ],
+  "commands": [],
+  "agents": [],
+  "mcp": [],
+  "workflows": [
+    {
+      "name": "core",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "core+clarify",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "full",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-checklist",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-analyze",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-converge",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    }
+  ]
+}

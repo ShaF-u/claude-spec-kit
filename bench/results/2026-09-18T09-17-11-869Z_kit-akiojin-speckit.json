@@ -1,0 +1,182 @@
+{
+  "label": "kit-akiojin-speckit",
+  "root": "C:\\Users\\koyo\\AppData\\Local\\Temp\\claude\\C--Users-koyo-Desktop-bat\\45314acc-7707-4cc6-b9f9-2f86617a3e4f\\scratchpad\\kits\\inst\\akiojin-speckit",
+  "measuredAt": "2026-09-18T09:17:11.868Z",
+  "alwaysOn": {
+    "claudeMd": 0,
+    "skillListing": 263,
+    "commandListing": 44,
+    "agentListing": 0,
+    "mcpTools": 0,
+    "total": 307
+  },
+  "claudeMd": [],
+  "skills": [
+    {
+      "name": "speckit-require",
+      "file": ".claude/skills/speckit-require/SKILL.md",
+      "listingTokens": 139,
+      "bodyTokens": 814,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "speckit-update",
+      "file": ".claude/skills/speckit-update/SKILL.md",
+      "listingTokens": 124,
+      "bodyTokens": 641,
+      "reads": [],
+      "readsTokens": 0
+    }
+  ],
+  "commands": [
+    {
+      "name": "/speckit-require",
+      "file": ".claude/commands/speckit-require.md",
+      "listingTokens": 22,
+      "bodyTokens": 152,
+      "reads": [
+        {
+          "file": ".claude/skills/speckit-require/SKILL.md",
+          "tokens": 972
+        }
+      ],
+      "readsTokens": 972
+    },
+    {
+      "name": "/speckit-update",
+      "file": ".claude/commands/speckit-update.md",
+      "listingTokens": 22,
+      "bodyTokens": 120,
+      "reads": [
+        {
+          "file": ".claude/skills/speckit-update/SKILL.md",
+          "tokens": 786
+        }
+      ],
+      "readsTokens": 786
+    }
+  ],
+  "agents": [],
+  "mcp": [],
+  "workflows": [
+    {
+      "name": "core",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "core+clarify",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "full",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-checklist",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-analyze",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-converge",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    }
+  ]
+}

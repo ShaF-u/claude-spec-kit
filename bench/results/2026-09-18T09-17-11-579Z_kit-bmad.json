@@ -1,0 +1,624 @@
+{
+  "label": "kit-bmad",
+  "root": "C:\\Users\\koyo\\AppData\\Local\\Temp\\claude\\C--Users-koyo-Desktop-bat\\45314acc-7707-4cc6-b9f9-2f86617a3e4f\\scratchpad\\kits\\inst\\bmad",
+  "measuredAt": "2026-09-18T09:17:11.579Z",
+  "alwaysOn": {
+    "claudeMd": 0,
+    "skillListing": 1919,
+    "commandListing": 0,
+    "agentListing": 0,
+    "mcpTools": 0,
+    "total": 1919
+  },
+  "claudeMd": [],
+  "skills": [
+    {
+      "name": "bmad",
+      "file": ".claude/skills/bmad/SKILL.md",
+      "listingTokens": 69,
+      "bodyTokens": 1504,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad/references/setup.md",
+          "tokens": 1759
+        }
+      ],
+      "readsTokens": 1759
+    },
+    {
+      "name": "bmad-advanced-elicitation",
+      "file": ".claude/skills/bmad-advanced-elicitation/SKILL.md",
+      "listingTokens": 59,
+      "bodyTokens": 1240,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-advanced-elicitation/assets/methods.csv",
+          "tokens": 3779
+        }
+      ],
+      "readsTokens": 3779
+    },
+    {
+      "name": "bmad-agent-analyst",
+      "file": ".claude/skills/bmad-agent-analyst/SKILL.md",
+      "listingTokens": 43,
+      "bodyTokens": 1066,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "bmad-agent-architect",
+      "file": ".claude/skills/bmad-agent-architect/SKILL.md",
+      "listingTokens": 35,
+      "bodyTokens": 1062,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "bmad-agent-dev",
+      "file": ".claude/skills/bmad-agent-dev/SKILL.md",
+      "listingTokens": 39,
+      "bodyTokens": 1073,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "bmad-agent-pm",
+      "file": ".claude/skills/bmad-agent-pm/SKILL.md",
+      "listingTokens": 37,
+      "bodyTokens": 1058,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "bmad-agent-ux-designer",
+      "file": ".claude/skills/bmad-agent-ux-designer/SKILL.md",
+      "listingTokens": 31,
+      "bodyTokens": 1070,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "bmad-architecture",
+      "file": ".claude/skills/bmad-architecture/SKILL.md",
+      "listingTokens": 97,
+      "bodyTokens": 3395,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-architecture/references/headless.md",
+          "tokens": 674
+        },
+        {
+          "file": ".claude/skills/bmad-architecture/references/reviewer-gate.md",
+          "tokens": 817
+        }
+      ],
+      "readsTokens": 1491
+    },
+    {
+      "name": "bmad-brainstorming",
+      "file": ".claude/skills/bmad-brainstorming/SKILL.md",
+      "listingTokens": 39,
+      "bodyTokens": 2368,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-brainstorming/references/headless.md",
+          "tokens": 1265
+        },
+        {
+          "file": ".claude/skills/bmad-brainstorming/references/mode-autonomous.md",
+          "tokens": 478
+        },
+        {
+          "file": ".claude/skills/bmad-brainstorming/references/mode-facilitator.md",
+          "tokens": 246
+        },
+        {
+          "file": ".claude/skills/bmad-brainstorming/references/mode-partner.md",
+          "tokens": 407
+        },
+        {
+          "file": ".claude/skills/bmad-brainstorming/references/in-chat-techniques.md",
+          "tokens": 559
+        },
+        {
+          "file": ".claude/skills/bmad-brainstorming/references/converge.md",
+          "tokens": 740
+        },
+        {
+          "file": ".claude/skills/bmad-brainstorming/references/resume.md",
+          "tokens": 187
+        },
+        {
+          "file": ".claude/skills/bmad-brainstorming/references/finalize.md",
+          "tokens": 1201
+        }
+      ],
+      "readsTokens": 5083
+    },
+    {
+      "name": "bmad-build",
+      "file": ".claude/skills/bmad-build/SKILL.md",
+      "listingTokens": 121,
+      "bodyTokens": 283,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-build/workflow.md",
+          "tokens": 1093
+        }
+      ],
+      "readsTokens": 1093
+    },
+    {
+      "name": "bmad-build-auto",
+      "file": ".claude/skills/bmad-build-auto/SKILL.md",
+      "listingTokens": 24,
+      "bodyTokens": 283,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-build-auto/workflow.md",
+          "tokens": 1565
+        }
+      ],
+      "readsTokens": 1565
+    },
+    {
+      "name": "bmad-code-review",
+      "file": ".claude/skills/bmad-code-review/SKILL.md",
+      "listingTokens": 48,
+      "bodyTokens": 242,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-code-review/workflow.md",
+          "tokens": 684
+        }
+      ],
+      "readsTokens": 684
+    },
+    {
+      "name": "bmad-correct-course",
+      "file": ".claude/skills/bmad-correct-course/SKILL.md",
+      "listingTokens": 63,
+      "bodyTokens": 3385,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-correct-course/checklist.md",
+          "tokens": 2981
+        }
+      ],
+      "readsTokens": 2981
+    },
+    {
+      "name": "bmad-create-epics-and-stories",
+      "file": ".claude/skills/bmad-create-epics-and-stories/SKILL.md",
+      "listingTokens": 36,
+      "bodyTokens": 1216,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-create-epics-and-stories/steps/step-01-validate-prerequisites.md",
+          "tokens": 2798
+        }
+      ],
+      "readsTokens": 2798
+    },
+    {
+      "name": "bmad-customize",
+      "file": ".claude/skills/bmad-customize/SKILL.md",
+      "listingTokens": 50,
+      "bodyTokens": 1597,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "bmad-deep-recon",
+      "file": ".claude/skills/bmad-deep-recon/SKILL.md",
+      "listingTokens": 188,
+      "bodyTokens": 2106,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-deep-recon/references/run.md",
+          "tokens": 2394
+        },
+        {
+          "file": ".claude/skills/bmad-deep-recon/references/selection.md",
+          "tokens": 593
+        },
+        {
+          "file": ".claude/skills/bmad-deep-recon/references/finalize.md",
+          "tokens": 455
+        },
+        {
+          "file": ".claude/skills/bmad-deep-recon/references/draft.md",
+          "tokens": 481
+        },
+        {
+          "file": ".claude/skills/bmad-deep-recon/references/process.md",
+          "tokens": 493
+        },
+        {
+          "file": ".claude/skills/bmad-deep-recon/references/verification.md",
+          "tokens": 1068
+        },
+        {
+          "file": ".claude/skills/bmad-deep-recon/references/synthesis.md",
+          "tokens": 694
+        },
+        {
+          "file": ".claude/skills/bmad-deep-recon/references/lifecycle.md",
+          "tokens": 288
+        }
+      ],
+      "readsTokens": 6466
+    },
+    {
+      "name": "bmad-forge-idea",
+      "file": ".claude/skills/bmad-forge-idea/SKILL.md",
+      "listingTokens": 90,
+      "bodyTokens": 2507,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "bmad-party-mode",
+      "file": ".claude/skills/bmad-party-mode/SKILL.md",
+      "listingTokens": 80,
+      "bodyTokens": 2315,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-party-mode/references/create-party.md",
+          "tokens": 2287
+        },
+        {
+          "file": ".claude/skills/bmad-party-mode/references/party-memory.md",
+          "tokens": 992
+        },
+        {
+          "file": ".claude/skills/bmad-party-mode/references/mode-auto.md",
+          "tokens": 279
+        },
+        {
+          "file": ".claude/skills/bmad-party-mode/references/mode-subagent.md",
+          "tokens": 1059
+        },
+        {
+          "file": ".claude/skills/bmad-party-mode/references/mode-agent-team.md",
+          "tokens": 518
+        }
+      ],
+      "readsTokens": 5135
+    },
+    {
+      "name": "bmad-prd",
+      "file": ".claude/skills/bmad-prd/SKILL.md",
+      "listingTokens": 29,
+      "bodyTokens": 3442,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-prd/references/headless.md",
+          "tokens": 840
+        },
+        {
+          "file": ".claude/skills/bmad-prd/references/validate.md",
+          "tokens": 1439
+        }
+      ],
+      "readsTokens": 2279
+    },
+    {
+      "name": "bmad-prfaq",
+      "file": ".claude/skills/bmad-prfaq/SKILL.md",
+      "listingTokens": 80,
+      "bodyTokens": 2630,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-prfaq/references/press-release.md",
+          "tokens": 1065
+        },
+        {
+          "file": ".claude/skills/bmad-prfaq/assets/prfaq-template.md",
+          "tokens": 376
+        },
+        {
+          "file": ".claude/skills/bmad-prfaq/agents/artifact-analyzer.md",
+          "tokens": 679
+        },
+        {
+          "file": ".claude/skills/bmad-prfaq/agents/web-researcher.md",
+          "tokens": 453
+        },
+        {
+          "file": ".claude/skills/bmad-prfaq/references/customer-faq.md",
+          "tokens": 910
+        },
+        {
+          "file": ".claude/skills/bmad-prfaq/references/internal-faq.md",
+          "tokens": 966
+        },
+        {
+          "file": ".claude/skills/bmad-prfaq/references/verdict.md",
+          "tokens": 1122
+        }
+      ],
+      "readsTokens": 5571
+    },
+    {
+      "name": "bmad-product-brief",
+      "file": ".claude/skills/bmad-product-brief/SKILL.md",
+      "listingTokens": 35,
+      "bodyTokens": 2843,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "bmad-project-context",
+      "file": ".claude/skills/bmad-project-context/SKILL.md",
+      "listingTokens": 57,
+      "bodyTokens": 3187,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-project-context/references/best-practices.md",
+          "tokens": 2376
+        },
+        {
+          "file": ".claude/skills/bmad-project-context/references/template.md",
+          "tokens": 683
+        }
+      ],
+      "readsTokens": 3059
+    },
+    {
+      "name": "bmad-qa-generate-e2e-tests",
+      "file": ".claude/skills/bmad-qa-generate-e2e-tests/SKILL.md",
+      "listingTokens": 42,
+      "bodyTokens": 1356,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-qa-generate-e2e-tests/checklist.md",
+          "tokens": 232
+        }
+      ],
+      "readsTokens": 232
+    },
+    {
+      "name": "bmad-retrospective",
+      "file": ".claude/skills/bmad-retrospective/SKILL.md",
+      "listingTokens": 83,
+      "bodyTokens": 211,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-retrospective/workflow.md",
+          "tokens": 3262
+        }
+      ],
+      "readsTokens": 3262
+    },
+    {
+      "name": "bmad-review",
+      "file": ".claude/skills/bmad-review/SKILL.md",
+      "listingTokens": 138,
+      "bodyTokens": 2223,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-review/references/lens-edge-case-hunter.md",
+          "tokens": 1487
+        }
+      ],
+      "readsTokens": 1487
+    },
+    {
+      "name": "bmad-spec",
+      "file": ".claude/skills/bmad-spec/SKILL.md",
+      "listingTokens": 98,
+      "bodyTokens": 4193,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-spec/assets/spec-template.md",
+          "tokens": 604
+        },
+        {
+          "file": ".claude/skills/bmad-spec/assets/stories-schema.md",
+          "tokens": 885
+        },
+        {
+          "file": ".claude/skills/bmad-spec/assets/headless-schemas.md",
+          "tokens": 306
+        }
+      ],
+      "readsTokens": 1795
+    },
+    {
+      "name": "bmad-sprint-planning",
+      "file": ".claude/skills/bmad-sprint-planning/SKILL.md",
+      "listingTokens": 96,
+      "bodyTokens": 1206,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-sprint-planning/references/readiness-gate.md",
+          "tokens": 461
+        },
+        {
+          "file": ".claude/skills/bmad-sprint-planning/references/generate-tracking.md",
+          "tokens": 660
+        },
+        {
+          "file": ".claude/skills/bmad-sprint-planning/references/status-view.md",
+          "tokens": 417
+        },
+        {
+          "file": ".claude/skills/bmad-sprint-planning/references/validate.md",
+          "tokens": 151
+        },
+        {
+          "file": ".claude/skills/bmad-sprint-planning/references/fix-sprint-status.md",
+          "tokens": 696
+        },
+        {
+          "file": ".claude/skills/bmad-sprint-planning/sprint-status-template.yaml",
+          "tokens": 616
+        }
+      ],
+      "readsTokens": 3001
+    },
+    {
+      "name": "bmad-ux",
+      "file": ".claude/skills/bmad-ux/SKILL.md",
+      "listingTokens": 59,
+      "bodyTokens": 2603,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-ux/references/design-md-spec.md",
+          "tokens": 841
+        },
+        {
+          "file": ".claude/skills/bmad-ux/references/headless.md",
+          "tokens": 589
+        },
+        {
+          "file": ".claude/skills/bmad-ux/references/validate.md",
+          "tokens": 1732
+        },
+        {
+          "file": ".claude/skills/bmad-ux/references/creative-tools.md",
+          "tokens": 479
+        }
+      ],
+      "readsTokens": 3641
+    },
+    {
+      "name": "bmad-walkthrough",
+      "file": ".claude/skills/bmad-walkthrough/SKILL.md",
+      "listingTokens": 53,
+      "bodyTokens": 211,
+      "reads": [
+        {
+          "file": ".claude/skills/bmad-walkthrough/workflow.md",
+          "tokens": 523
+        }
+      ],
+      "readsTokens": 523
+    }
+  ],
+  "commands": [],
+  "agents": [],
+  "mcp": [],
+  "workflows": [
+    {
+      "name": "core",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "core+clarify",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "full",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-checklist",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-analyze",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-converge",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "label": "kit-claude-kiro",
+  "root": "C:\\Users\\koyo\\AppData\\Local\\Temp\\claude\\C--Users-koyo-Desktop-bat\\45314acc-7707-4cc6-b9f9-2f86617a3e4f\\scratchpad\\kits\\inst\\claude-kiro",
+  "measuredAt": "2026-09-18T09:16:45.926Z",
+  "alwaysOn": {
+    "claudeMd": 326,
+    "skillListing": 0,
+    "commandListing": 54,
+    "agentListing": 0,
+    "mcpTools": 0,
+    "total": 380
+  },
+  "claudeMd": [
+    {
+      "file": "CLAUDE.md",
+      "tokens": 326
+    }
+  ],
+  "skills": [],
+  "commands": [
+    {
+      "name": "/spec:create",
+      "file": ".claude/commands/spec/create.md",
+      "listingTokens": 22,
+      "bodyTokens": 2362,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "/spec:implement",
+      "file": ".claude/commands/spec/implement.md",
+      "listingTokens": 15,
+      "bodyTokens": 447,
+      "reads": [
+        {
+          "file": "CLAUDE.md",
+          "tokens": 326
+        }
+      ],
+      "readsTokens": 326
+    },
+    {
+      "name": "/spec:review",
+      "file": ".claude/commands/spec/review.md",
+      "listingTokens": 17,
+      "bodyTokens": 863,
+      "reads": [],
+      "readsTokens": 0
+    }
+  ],
+  "agents": [],
+  "mcp": [],
+  "workflows": [
+    {
+      "name": "core",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "core+clarify",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "full",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-checklist",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-analyze",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-converge",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    }
+  ]
+}

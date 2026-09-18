@@ -1,0 +1,179 @@
+{
+  "label": "kit-agent-os",
+  "root": "C:\\Users\\koyo\\AppData\\Local\\Temp\\claude\\C--Users-koyo-Desktop-bat\\45314acc-7707-4cc6-b9f9-2f86617a3e4f\\scratchpad\\kits\\inst\\agent-os",
+  "measuredAt": "2026-09-18T09:17:11.733Z",
+  "alwaysOn": {
+    "claudeMd": 0,
+    "skillListing": 0,
+    "commandListing": 37,
+    "agentListing": 0,
+    "mcpTools": 0,
+    "total": 37
+  },
+  "claudeMd": [],
+  "skills": [],
+  "commands": [
+    {
+      "name": "/agent-os:discover-standards",
+      "file": ".claude/commands/agent-os/discover-standards.md",
+      "listingTokens": 8,
+      "bodyTokens": 2001,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "/agent-os:index-standards",
+      "file": ".claude/commands/agent-os/index-standards.md",
+      "listingTokens": 8,
+      "bodyTokens": 852,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "/agent-os:inject-standards",
+      "file": ".claude/commands/agent-os/inject-standards.md",
+      "listingTokens": 8,
+      "bodyTokens": 2097,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "/agent-os:plan-product",
+      "file": ".claude/commands/agent-os/plan-product.md",
+      "listingTokens": 7,
+      "bodyTokens": 1144,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "/agent-os:shape-spec",
+      "file": ".claude/commands/agent-os/shape-spec.md",
+      "listingTokens": 6,
+      "bodyTokens": 1680,
+      "reads": [],
+      "readsTokens": 0
+    }
+  ],
+  "agents": [],
+  "mcp": [],
+  "workflows": [
+    {
+      "name": "core",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "core+clarify",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "full",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-checklist",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-analyze",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-converge",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    }
+  ]
+}

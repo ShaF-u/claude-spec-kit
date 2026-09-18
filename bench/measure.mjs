@@ -90,23 +90,32 @@ function agents() {
 }
 
 // The listing line is what the model sees at startup; the body only when
-// invoked. `reads` are project files the body tells the model to read
-// (paths under .specify/ or .claude/ mentioned in the text) -- an
-// approximation of the extra context one invocation pulls in. Scripts
-// are excluded: the model runs them and only their output enters
-// context, which a static pass can't size.
+// invoked. `reads` are files the body tells the model to read: any
+// file-looking token (.md/.json/.yaml/...) that resolves relative to the
+// skill's own directory or to the project root -- an approximation of
+// the extra context one invocation pulls in, layout-agnostic so kits
+// with different conventions (spec-kit's .specify/, cc-sdd's rules/,
+// BMAD's workflows/) measure the same way. Scripts are excluded: the
+// model runs them and only their output enters context, which a static
+// pass can't size.
 function describeInvocable(name, file) {
   const { frontmatter, body } = splitFrontmatter(read(file));
   const description = frontmatter.description ?? '';
   const listing = `- ${name}: ${description}`;
   const readsSeen = new Set();
   const reads = [];
-  for (const m of body.matchAll(/(?:\.specify|\.claude|\$\{CLAUDE_PLUGIN_ROOT\})\/[\w./-]+/g)) {
-    const p = m[0].replace('${CLAUDE_PLUGIN_ROOT}', '.claude');
-    if (readsSeen.has(p) || /\/scripts\//.test(p)) continue;
+  const skillDir = path.dirname(file);
+  for (const m of body.matchAll(/[\w$@{}./-]+\.(?:md|json|ya?ml|txt|xml|csv)\b/g)) {
+    const p = m[0]
+      .replace('${CLAUDE_PLUGIN_ROOT}', '.claude')
+      .replace(/\{\{KIRO_DIR\}\}/g, '.kiro')
+      .replace(/^@/, '')
+      .replace(/^\.\//, '');
+    if (readsSeen.has(p) || /(^|\/)scripts?\//.test(p) || p === path.basename(file)) continue;
     readsSeen.add(p);
-    const abs = path.join(root, p);
-    if (existsSync(abs) && statSync(abs).isFile()) reads.push({ file: p, tokens: estimateTokens(read(abs)) });
+    const candidates = [path.join(skillDir, p), path.join(root, p)];
+    const abs = candidates.find((c) => existsSync(c) && statSync(c).isFile());
+    if (abs) reads.push({ file: rel(abs), tokens: estimateTokens(read(abs)) });
   }
   return {
     name,

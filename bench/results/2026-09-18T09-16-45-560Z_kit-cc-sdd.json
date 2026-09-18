@@ -1,0 +1,403 @@
+{
+  "label": "kit-cc-sdd",
+  "root": "C:\\Users\\koyo\\AppData\\Local\\Temp\\claude\\C--Users-koyo-Desktop-bat\\45314acc-7707-4cc6-b9f9-2f86617a3e4f\\scratchpad\\kits\\inst\\cc-sdd",
+  "measuredAt": "2026-09-18T09:16:45.559Z",
+  "alwaysOn": {
+    "claudeMd": 840,
+    "skillListing": 632,
+    "commandListing": 0,
+    "agentListing": 0,
+    "mcpTools": 0,
+    "total": 1472
+  },
+  "claudeMd": [
+    {
+      "file": "CLAUDE.md",
+      "tokens": 840
+    }
+  ],
+  "skills": [
+    {
+      "name": "kiro-debug",
+      "file": ".claude/skills/kiro-debug/SKILL.md",
+      "listingTokens": 46,
+      "bodyTokens": 1254,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "kiro-discovery",
+      "file": ".claude/skills/kiro-discovery/SKILL.md",
+      "listingTokens": 56,
+      "bodyTokens": 3288,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "kiro-impl",
+      "file": ".claude/skills/kiro-impl/SKILL.md",
+      "listingTokens": 36,
+      "bodyTokens": 3988,
+      "reads": [
+        {
+          "file": ".claude/skills/kiro-impl/templates/implementer-prompt.md",
+          "tokens": 1662
+        },
+        {
+          "file": ".claude/skills/kiro-impl/templates/reviewer-prompt.md",
+          "tokens": 1359
+        },
+        {
+          "file": ".claude/skills/kiro-impl/templates/debugger-prompt.md",
+          "tokens": 815
+        }
+      ],
+      "readsTokens": 3836
+    },
+    {
+      "name": "kiro-review",
+      "file": ".claude/skills/kiro-review/SKILL.md",
+      "listingTokens": 53,
+      "bodyTokens": 1687,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "kiro-spec-batch",
+      "file": ".claude/skills/kiro-spec-batch/SKILL.md",
+      "listingTokens": 39,
+      "bodyTokens": 2241,
+      "reads": [
+        {
+          "file": ".claude/skills/kiro-spec-init/SKILL.md",
+          "tokens": 786
+        },
+        {
+          "file": ".claude/skills/kiro-spec-requirements/SKILL.md",
+          "tokens": 2126
+        },
+        {
+          "file": ".claude/skills/kiro-spec-design/SKILL.md",
+          "tokens": 2874
+        },
+        {
+          "file": ".claude/skills/kiro-spec-tasks/SKILL.md",
+          "tokens": 2461
+        }
+      ],
+      "readsTokens": 8247
+    },
+    {
+      "name": "kiro-spec-design",
+      "file": ".claude/skills/kiro-spec-design/SKILL.md",
+      "listingTokens": 48,
+      "bodyTokens": 2757,
+      "reads": [
+        {
+          "file": ".kiro/settings/templates/specs/design.md",
+          "tokens": 3339
+        },
+        {
+          "file": ".claude/skills/kiro-spec-design/rules/design-principles.md",
+          "tokens": 3015
+        },
+        {
+          "file": ".kiro/settings/templates/specs/research.md",
+          "tokens": 591
+        },
+        {
+          "file": ".claude/skills/kiro-spec-design/rules/design-discovery-full.md",
+          "tokens": 949
+        },
+        {
+          "file": ".claude/skills/kiro-spec-design/rules/design-discovery-light.md",
+          "tokens": 389
+        },
+        {
+          "file": ".claude/skills/kiro-spec-design/rules/design-synthesis.md",
+          "tokens": 466
+        },
+        {
+          "file": ".claude/skills/kiro-spec-design/rules/design-review-gate.md",
+          "tokens": 1016
+        }
+      ],
+      "readsTokens": 9765
+    },
+    {
+      "name": "kiro-spec-init",
+      "file": ".claude/skills/kiro-spec-init/SKILL.md",
+      "listingTokens": 21,
+      "bodyTokens": 736,
+      "reads": [
+        {
+          "file": ".kiro/settings/templates/specs/init.json",
+          "tokens": 110
+        },
+        {
+          "file": ".kiro/settings/templates/specs/requirements-init.md",
+          "tokens": 40
+        }
+      ],
+      "readsTokens": 150
+    },
+    {
+      "name": "kiro-spec-quick",
+      "file": ".claude/skills/kiro-spec-quick/SKILL.md",
+      "listingTokens": 19,
+      "bodyTokens": 1950,
+      "reads": [
+        {
+          "file": ".kiro/settings/templates/specs/init.json",
+          "tokens": 110
+        },
+        {
+          "file": ".kiro/settings/templates/specs/requirements-init.md",
+          "tokens": 40
+        }
+      ],
+      "readsTokens": 150
+    },
+    {
+      "name": "kiro-spec-requirements",
+      "file": ".claude/skills/kiro-spec-requirements/SKILL.md",
+      "listingTokens": 43,
+      "bodyTokens": 2037,
+      "reads": [
+        {
+          "file": ".claude/skills/kiro-spec-requirements/rules/ears-format.md",
+          "tokens": 739
+        },
+        {
+          "file": ".claude/skills/kiro-spec-requirements/rules/requirements-review-gate.md",
+          "tokens": 924
+        },
+        {
+          "file": ".kiro/settings/templates/specs/requirements.md",
+          "tokens": 325
+        }
+      ],
+      "readsTokens": 1988
+    },
+    {
+      "name": "kiro-spec-status",
+      "file": ".claude/skills/kiro-spec-status/SKILL.md",
+      "listingTokens": 15,
+      "bodyTokens": 709,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "kiro-spec-tasks",
+      "file": ".claude/skills/kiro-spec-tasks/SKILL.md",
+      "listingTokens": 30,
+      "bodyTokens": 2380,
+      "reads": [
+        {
+          "file": ".claude/skills/kiro-spec-tasks/rules/tasks-generation.md",
+          "tokens": 2778
+        },
+        {
+          "file": ".claude/skills/kiro-spec-tasks/rules/tasks-parallel-analysis.md",
+          "tokens": 633
+        },
+        {
+          "file": ".kiro/settings/templates/specs/tasks.md",
+          "tokens": 318
+        }
+      ],
+      "readsTokens": 3729
+    },
+    {
+      "name": "kiro-steering",
+      "file": ".claude/skills/kiro-steering/SKILL.md",
+      "listingTokens": 36,
+      "bodyTokens": 1122,
+      "reads": [
+        {
+          "file": ".claude/skills/kiro-steering/rules/steering-principles.md",
+          "tokens": 594
+        }
+      ],
+      "readsTokens": 594
+    },
+    {
+      "name": "kiro-steering-custom",
+      "file": ".claude/skills/kiro-steering-custom/SKILL.md",
+      "listingTokens": 35,
+      "bodyTokens": 1156,
+      "reads": [
+        {
+          "file": ".claude/skills/kiro-steering-custom/rules/steering-principles.md",
+          "tokens": 594
+        }
+      ],
+      "readsTokens": 594
+    },
+    {
+      "name": "kiro-validate-design",
+      "file": ".claude/skills/kiro-validate-design/SKILL.md",
+      "listingTokens": 33,
+      "bodyTokens": 1228,
+      "reads": [
+        {
+          "file": ".claude/skills/kiro-validate-design/rules/design-review.md",
+          "tokens": 1094
+        }
+      ],
+      "readsTokens": 1094
+    },
+    {
+      "name": "kiro-validate-gap",
+      "file": ".claude/skills/kiro-validate-gap/SKILL.md",
+      "listingTokens": 36,
+      "bodyTokens": 1309,
+      "reads": [
+        {
+          "file": ".claude/skills/kiro-validate-gap/rules/gap-analysis.md",
+          "tokens": 1278
+        }
+      ],
+      "readsTokens": 1278
+    },
+    {
+      "name": "kiro-validate-impl",
+      "file": ".claude/skills/kiro-validate-impl/SKILL.md",
+      "listingTokens": 41,
+      "bodyTokens": 2764,
+      "reads": [],
+      "readsTokens": 0
+    },
+    {
+      "name": "kiro-verify-completion",
+      "file": ".claude/skills/kiro-verify-completion/SKILL.md",
+      "listingTokens": 45,
+      "bodyTokens": 910,
+      "reads": [],
+      "readsTokens": 0
+    }
+  ],
+  "commands": [],
+  "agents": [],
+  "mcp": [],
+  "workflows": [
+    {
+      "name": "core",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "core+clarify",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    },
+    {
+      "name": "full",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-checklist",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-analyze",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 0,
+          "missing": true
+        },
+        {
+          "step": "speckit-converge",
+          "tokens": 0,
+          "missing": true
+        }
+      ],
+      "tokens": 0
+    }
+  ]
+}
