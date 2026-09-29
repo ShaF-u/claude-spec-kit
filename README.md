@@ -27,7 +27,7 @@
 
 1. `.claude/skills/speckit-*/` と `.specify/` をコピーする。
 2. 汎用スキルが欲しければ `.claude/skills/` の残り（`verification-before-completion` 等）と `THIRD_PARTY_NOTICES.md` も。
-3. `context/`（context-templates）を使うなら `git submodule add https://github.com/ShaF-u/claude-context-templates.git context` し、`context/` 内で Core をビルドして `.mcp.json` を置く。既に入っているプロジェクトではそちらを使う。
+3. `context/`（context-templates）を使うなら `git submodule add https://github.com/ShaF-u/claude-context-templates.git context` し、`context/` 内で Core をビルドする。MCP サーバーの登録は **ユーザースコープに1度だけ**（`claude mcp add --scope user`、詳細は `context/README.md`）。プロジェクト側に置くのは `aistudio.config` 1ファイルだけで、`.mcp.json` は不要。
 4. `AI/STRUCTURE.md` `AI/DECISIONS.md` はそのプロジェクトの内容に書き換える。
 
 ## 計測
@@ -47,4 +47,4 @@ cmake -S . -B build -G "Visual Studio 17 2022" -A x64
 cmake --build build --config Debug --target aistudio_core_cli
 ```
 
-`.mcp.json` は `context/build/Core/Debug/aistudio_core_cli.exe` を指している。Release で運用するならパスを変える。
+Core はユーザースコープに登録してあり（`~/.claude.json` の `context-reduction-core`）、このリポジトリに `.mcp.json` は無い。以前はあったが `command` が相対パスで、カレントディレクトリがこのリポジトリのときしか解決せず他プロジェクトから使えなかったため削除した。このプロジェクト向けのチューニングはルートの `aistudio.config` にある。

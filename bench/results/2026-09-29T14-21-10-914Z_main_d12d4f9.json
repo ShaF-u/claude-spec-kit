@@ -1,0 +1,454 @@
+{
+  "label": "main@d12d4f9",
+  "root": "C:\\Users\\kazus\\Desktop\\claude-spec-kit",
+  "measuredAt": "2026-09-29T14:21:10.914Z",
+  "alwaysOn": {
+    "claudeMd": 307,
+    "skillListing": 772,
+    "commandListing": 0,
+    "agentListing": 0,
+    "mcpTools": 1633,
+    "total": 2712
+  },
+  "claudeMd": [
+    {
+      "file": "CLAUDE.md",
+      "tokens": 307
+    }
+  ],
+  "skills": [
+    {
+      "name": "gh-fix-issue",
+      "file": ".claude/skills/gh-fix-issue/SKILL.md",
+      "listingTokens": 73,
+      "bodyTokens": 3372,
+      "reads": [],
+      "readsTokens": 0,
+      "conditionalReadsTokens": 0
+    },
+    {
+      "name": "gh-fix-pr",
+      "file": ".claude/skills/gh-fix-pr/SKILL.md",
+      "listingTokens": 86,
+      "bodyTokens": 4468,
+      "reads": [],
+      "readsTokens": 0,
+      "conditionalReadsTokens": 0
+    },
+    {
+      "name": "gh-pr",
+      "file": ".claude/skills/gh-pr/SKILL.md",
+      "listingTokens": 95,
+      "bodyTokens": 2876,
+      "reads": [],
+      "readsTokens": 0,
+      "conditionalReadsTokens": 0
+    },
+    {
+      "name": "gh-pr-check",
+      "file": ".claude/skills/gh-pr-check/SKILL.md",
+      "listingTokens": 37,
+      "bodyTokens": 2365,
+      "reads": [],
+      "readsTokens": 0,
+      "conditionalReadsTokens": 0
+    },
+    {
+      "name": "speckit-analyze",
+      "file": ".claude/skills/speckit-analyze/SKILL.md",
+      "listingTokens": 39,
+      "bodyTokens": 1876,
+      "reads": [
+        {
+          "file": ".specify/memory/constitution.md",
+          "tokens": 958,
+          "conditional": true
+        }
+      ],
+      "readsTokens": 0,
+      "conditionalReadsTokens": 958
+    },
+    {
+      "name": "speckit-checklist",
+      "file": ".claude/skills/speckit-checklist/SKILL.md",
+      "listingTokens": 26,
+      "bodyTokens": 4547,
+      "reads": [
+        {
+          "file": ".specify/memory/constitution.md",
+          "tokens": 958,
+          "conditional": false
+        },
+        {
+          "file": ".specify/templates/checklist-template.md",
+          "tokens": 520,
+          "conditional": true
+        }
+      ],
+      "readsTokens": 958,
+      "conditionalReadsTokens": 520
+    },
+    {
+      "name": "speckit-clarify",
+      "file": ".claude/skills/speckit-clarify/SKILL.md",
+      "listingTokens": 45,
+      "bodyTokens": 1149,
+      "reads": [
+        {
+          "file": ".specify/memory/constitution.md",
+          "tokens": 958,
+          "conditional": false
+        },
+        {
+          "file": ".claude/skills/speckit-clarify/rules/question-format.md",
+          "tokens": 435,
+          "conditional": true
+        }
+      ],
+      "readsTokens": 958,
+      "conditionalReadsTokens": 435
+    },
+    {
+      "name": "speckit-constitution",
+      "file": ".claude/skills/speckit-constitution/SKILL.md",
+      "listingTokens": 37,
+      "bodyTokens": 749,
+      "reads": [
+        {
+          "file": ".specify/memory/constitution.md",
+          "tokens": 958,
+          "conditional": true
+        }
+      ],
+      "readsTokens": 0,
+      "conditionalReadsTokens": 958
+    },
+    {
+      "name": "speckit-converge",
+      "file": ".claude/skills/speckit-converge/SKILL.md",
+      "listingTokens": 47,
+      "bodyTokens": 2065,
+      "reads": [
+        {
+          "file": ".specify/memory/constitution.md",
+          "tokens": 958,
+          "conditional": false
+        }
+      ],
+      "readsTokens": 958,
+      "conditionalReadsTokens": 0
+    },
+    {
+      "name": "speckit-implement",
+      "file": ".claude/skills/speckit-implement/SKILL.md",
+      "listingTokens": 38,
+      "bodyTokens": 722,
+      "reads": [
+        {
+          "file": ".specify/memory/constitution.md",
+          "tokens": 958,
+          "conditional": true
+        },
+        {
+          "file": ".claude/skills/speckit-implement/rules/ignore-files.md",
+          "tokens": 543,
+          "conditional": true
+        }
+      ],
+      "readsTokens": 0,
+      "conditionalReadsTokens": 1501
+    },
+    {
+      "name": "speckit-plan",
+      "file": ".claude/skills/speckit-plan/SKILL.md",
+      "listingTokens": 29,
+      "bodyTokens": 441,
+      "reads": [
+        {
+          "file": ".specify/memory/constitution.md",
+          "tokens": 958,
+          "conditional": false
+        }
+      ],
+      "readsTokens": 958,
+      "conditionalReadsTokens": 0
+    },
+    {
+      "name": "speckit-specify",
+      "file": ".claude/skills/speckit-specify/SKILL.md",
+      "listingTokens": 30,
+      "bodyTokens": 895,
+      "reads": [
+        {
+          "file": ".specify/init-options.json",
+          "tokens": 46,
+          "conditional": false
+        },
+        {
+          "file": ".specify/templates/spec-template.md",
+          "tokens": 1172,
+          "conditional": false
+        },
+        {
+          "file": ".specify/memory/constitution.md",
+          "tokens": 958,
+          "conditional": false
+        },
+        {
+          "file": ".claude/skills/speckit-specify/rules/writing-guidelines.md",
+          "tokens": 467,
+          "conditional": true
+        },
+        {
+          "file": ".specify/templates/spec-quality-checklist.md",
+          "tokens": 297,
+          "conditional": false
+        },
+        {
+          "file": ".claude/skills/speckit-specify/rules/clarification-questions.md",
+          "tokens": 315,
+          "conditional": true
+        }
+      ],
+      "readsTokens": 2473,
+      "conditionalReadsTokens": 782
+    },
+    {
+      "name": "speckit-tasks",
+      "file": ".claude/skills/speckit-tasks/SKILL.md",
+      "listingTokens": 31,
+      "bodyTokens": 657,
+      "reads": [
+        {
+          "file": ".specify/memory/constitution.md",
+          "tokens": 958,
+          "conditional": true
+        }
+      ],
+      "readsTokens": 0,
+      "conditionalReadsTokens": 958
+    },
+    {
+      "name": "speckit-taskstoissues",
+      "file": ".claude/skills/speckit-taskstoissues/SKILL.md",
+      "listingTokens": 38,
+      "bodyTokens": 864,
+      "reads": [
+        {
+          "file": ".specify/memory/constitution.md",
+          "tokens": 958,
+          "conditional": false
+        }
+      ],
+      "readsTokens": 958,
+      "conditionalReadsTokens": 0
+    },
+    {
+      "name": "systematic-debugging",
+      "file": ".claude/skills/systematic-debugging/SKILL.md",
+      "listingTokens": 29,
+      "bodyTokens": 2329,
+      "reads": [
+        {
+          "file": ".claude/skills/systematic-debugging/root-cause-tracing.md",
+          "tokens": 1373,
+          "conditional": false
+        },
+        {
+          "file": ".claude/skills/systematic-debugging/defense-in-depth.md",
+          "tokens": 944,
+          "conditional": false
+        },
+        {
+          "file": ".claude/skills/systematic-debugging/condition-based-waiting.md",
+          "tokens": 910,
+          "conditional": false
+        }
+      ],
+      "readsTokens": 3227,
+      "conditionalReadsTokens": 0
+    },
+    {
+      "name": "test-driven-development",
+      "file": ".claude/skills/test-driven-development/SKILL.md",
+      "listingTokens": 27,
+      "bodyTokens": 2223,
+      "reads": [
+        {
+          "file": ".claude/skills/test-driven-development/writing-good-tests.md",
+          "tokens": 2124,
+          "conditional": true
+        }
+      ],
+      "readsTokens": 0,
+      "conditionalReadsTokens": 2124
+    },
+    {
+      "name": "verification-before-completion",
+      "file": ".claude/skills/verification-before-completion/SKILL.md",
+      "listingTokens": 65,
+      "bodyTokens": 847,
+      "reads": [],
+      "readsTokens": 0,
+      "conditionalReadsTokens": 0
+    }
+  ],
+  "commands": [],
+  "agents": [],
+  "mcp": [
+    {
+      "name": "universal-image-ai",
+      "toolCount": 6,
+      "tokens": 976,
+      "tools": [
+        {
+          "name": "image_status",
+          "tokens": 45
+        },
+        {
+          "name": "generate_image",
+          "tokens": 645
+        },
+        {
+          "name": "get_image_job",
+          "tokens": 67
+        },
+        {
+          "name": "cancel_image_job",
+          "tokens": 64
+        },
+        {
+          "name": "list_image_jobs",
+          "tokens": 91
+        },
+        {
+          "name": "read_image",
+          "tokens": 64
+        }
+      ]
+    },
+    {
+      "name": "context-reduction-core",
+      "toolCount": 4,
+      "tokens": 657,
+      "tools": [
+        {
+          "name": "symbol_search",
+          "tokens": 97
+        },
+        {
+          "name": "keyword_search",
+          "tokens": 151
+        },
+        {
+          "name": "context_retrieve",
+          "tokens": 203
+        },
+        {
+          "name": "context_fetch",
+          "tokens": 206
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "core",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 749
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 3368
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 1399
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 657
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 722
+        }
+      ],
+      "tokens": 6895
+    },
+    {
+      "name": "core+clarify",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 749
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 3368
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 2107
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 1399
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 657
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 722
+        }
+      ],
+      "tokens": 9002
+    },
+    {
+      "name": "full",
+      "steps": [
+        {
+          "step": "speckit-constitution",
+          "tokens": 749
+        },
+        {
+          "step": "speckit-specify",
+          "tokens": 3368
+        },
+        {
+          "step": "speckit-clarify",
+          "tokens": 2107
+        },
+        {
+          "step": "speckit-plan",
+          "tokens": 1399
+        },
+        {
+          "step": "speckit-checklist",
+          "tokens": 5505
+        },
+        {
+          "step": "speckit-tasks",
+          "tokens": 657
+        },
+        {
+          "step": "speckit-analyze",
+          "tokens": 1876
+        },
+        {
+          "step": "speckit-implement",
+          "tokens": 722
+        },
+        {
+          "step": "speckit-converge",
+          "tokens": 3023
+        }
+      ],
+      "tokens": 19406
+    }
+  ]
+}

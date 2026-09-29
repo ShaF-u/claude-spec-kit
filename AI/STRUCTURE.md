@@ -11,7 +11,7 @@
 | `specs/<NNN-name>/` | 生成物（spec.md, plan.md, research.md, data-model.md, quickstart.md, tasks.md, checklists/）。`001-bench-compare` はキットで1周回した実例 |
 | `bench/` | コンテキスト量ベンチマーク。`measure.mjs` が本体（`--compare` で2結果の差分）、`lib/compare.mjs` が比較ロジック、`requirements/` は各スキルの要件チェックリスト、`results/` は計測履歴 |
 | `Docs/` | 人向け。`kit-comparison.md` は他キットとの比較と取り込み方針 |
-| `context/` | サブモジュール。`context/Core` が MCP サーバー（`.mcp.json` で接続）、`context/AI` `Shared` がテンプレート原本 |
+| `context/` | サブモジュール。`context/Core` が MCP サーバー（ユーザースコープに登録、設定はルートの `aistudio.config`）、`context/AI` `Shared` がテンプレート原本 |
 | `THIRD_PARTY_NOTICES.md` | 同梱スキルの出典とライセンス |
 
 ## 主要機能とその場所

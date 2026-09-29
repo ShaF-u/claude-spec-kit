@@ -11,6 +11,7 @@
 // Usage: node bench/measure.mjs [--root DIR] [--label NAME] [--json]
 //        node bench/measure.mjs --compare A.json B.json   (no measuring, no saving)
 import { existsSync, readFileSync, readdirSync, writeFileSync, mkdirSync, statSync } from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
@@ -145,12 +146,31 @@ function describeInvocable(name, file) {
 }
 
 // ---- MCP -------------------------------------------------------------------
+// Claude Code はプロジェクトの .mcp.json とユーザースコープ(~/.claude.json)の
+// 両方のサーバーを起動するので、always-on のツール定義コストは両方を足さないと
+// 実際のセッションと合わない。Core は .mcp.json をやめてユーザースコープ登録に
+// 移したので、ここで ~/.claude.json を読まないとその分が丸ごと抜け落ちる
+// (同名なら project 側が優先されるため project を後に重ねる)。
+function declaredMcpServers() {
+  const files = [
+    path.join(os.homedir(), '.claude.json'),
+    path.join(root, '.mcp.json'),
+  ];
+  const merged = {};
+  for (const file of files) {
+    if (!existsSync(file)) continue;
+    try {
+      Object.assign(merged, JSON.parse(read(file)).mcpServers ?? {});
+    } catch {
+      // 壊れたJSONで計測全体を落とさない
+    }
+  }
+  return merged;
+}
+
 async function mcpServers() {
-  const file = path.join(root, '.mcp.json');
-  if (!existsSync(file)) return [];
-  const config = JSON.parse(read(file));
   const out = [];
-  for (const [name, server] of Object.entries(config.mcpServers ?? {})) {
+  for (const [name, server] of Object.entries(declaredMcpServers())) {
     if ((server.type ?? 'stdio') !== 'stdio') {
       out.push({ name, tools: null, note: `type ${server.type} not measured` });
       continue;
