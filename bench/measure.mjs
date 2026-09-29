@@ -8,7 +8,8 @@
 //               plus the files it tells the model to read)
 // Then sums on-invoke per workflow from bench/workflows.json.
 //
-// Usage: node bench/measure.mjs [--root DIR] [--label NAME] [--json]
+// Usage: node bench/measure.mjs [--root DIR] [--label NAME] [--json] [--save]
+//        --save also writes bench/results/<time>_<label>.json
 //        node bench/measure.mjs --compare A.json B.json   (no measuring, no saving)
 import { existsSync, readFileSync, readdirSync, writeFileSync, mkdirSync, statSync } from 'node:fs';
 import os from 'node:os';
@@ -220,10 +221,13 @@ alwaysOn.total = Object.values(alwaysOn).reduce((a, b) => a + b, 0);
 
 const result = { label, root, measuredAt: new Date().toISOString(), alwaysOn, claudeMd, skills: skillList, commands: commandList, agents: agentList, mcp, workflows: flows };
 
-const outDir = path.join(benchDir, 'results');
-mkdirSync(outDir, { recursive: true });
-const outFile = path.join(outDir, `${new Date().toISOString().replace(/[:.]/g, '-')}_${label.replace(/[^\w.-]/g, '_')}.json`);
-writeFileSync(outFile, JSON.stringify(result, null, 2));
+let outFile = null;
+if (args.includes('--save')) {
+  const outDir = path.join(benchDir, 'results');
+  mkdirSync(outDir, { recursive: true });
+  outFile = path.join(outDir, `${new Date().toISOString().replace(/[:.]/g, '-')}_${label.replace(/[^\w.-]/g, '_')}.json`);
+  writeFileSync(outFile, JSON.stringify(result, null, 2));
+}
 
 if (jsonOnly) {
   console.log(JSON.stringify(result, null, 2));
@@ -249,5 +253,5 @@ if (jsonOnly) {
   for (const f of flows) {
     console.log(`  ${pad(f.name, 12)} ${pad(f.tokens, 7)} ${f.steps.map((s) => `${s.step}${s.missing ? '(missing)' : ''}=${s.tokens}`).join(' + ')}`);
   }
-  console.log(`\nsaved: ${rel(outFile)}`);
+  if (outFile) console.log(`\nsaved: ${rel(outFile)}`);
 }

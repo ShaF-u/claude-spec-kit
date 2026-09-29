@@ -1,12 +1,16 @@
 # claude-spec-kit
 
 [github/spec-kit](https://github.com/github/spec-kit) を Claude Code 向けに、コンテキスト消費を抑える方向で最適化したスペックキット。
-仕様（spec）→ 計画（plan）→ タスク（tasks）→ 実装（implement）の流れはそのまま、指示に使うトークンを約1/3にした。
+仕様（spec）→ 計画（plan）→ タスク（tasks）→ 実装（implement）の流れはそのまま、指示に使うトークンを約4割にした。
 
 | | 素の spec-kit | このキット |
 |---|---|---|
-| 起動時に毎回乗る量（スキル一覧） | 339 | 約340（+汎用スキル7個で 751） |
-| core ワークフロー1周の指示コスト | 18,145 | **6,113** |
+| 起動時に毎回乗る量（スキル一覧） | 339 | 約360（+汎用・GitHub スキル7個で 772） |
+| core ワークフロー1周の指示コスト | 18,145 | **6,895**（うち constitution.md の読み込み 958×2） |
+
+core の値は constitution.md の分量で変わる（制定前は 6,113）。
+
+**動作環境: Windows 専用。** `.specify/scripts/` は PowerShell 版だけで、スキルもそれを呼ぶ。
 
 他キットとの比較と、どこから何を取り込んだかは `Docs/kit-comparison.md`。
 
@@ -35,9 +39,11 @@
 ```
 node bench/measure.mjs            # このプロジェクト
 node bench/measure.mjs --root DIR # 他のプロジェクト/キット
+node bench/measure.mjs --save     # 結果を bench/results/ に残す（比較の基準にしたい時だけ）
+node bench/validate.mjs           # specs/ の生成物の構造を検査
 ```
 
-詳細は `bench/README.md`。スキルを書き換えたら `bench/requirements/<skill>.md` で振る舞いが落ちていないか照合する。
+詳細は `bench/README.md`。スキルを書き換えたら `bench/requirements/<skill>.md` で振る舞いが落ちていないか照合し、固定のお題で1周回して `validate.mjs` を通す（手順は `bench/README.md` の「回帰確認」）。
 
 ## Core（MCP サーバー）のビルド
 

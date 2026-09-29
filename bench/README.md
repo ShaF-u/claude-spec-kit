@@ -3,7 +3,8 @@
 このプロジェクトのClaude Code設定が、どれだけコンテキストを消費するかを測る。
 
 ```
-node bench/measure.mjs            # 結果を表で表示 + bench/results/ にJSON保存
+node bench/measure.mjs            # 結果を表で表示（保存しない）
+node bench/measure.mjs --save     # 表示 + bench/results/ にJSON保存
 node bench/measure.mjs --json     # JSONのみ
 node bench/measure.mjs --root DIR --label NAME   # 別ディレクトリの設定を測る
 ```
@@ -28,7 +29,23 @@ Claude Codeはスキル/コマンドの**名前と説明だけ**を起動時に�
 
 ## 変種の比較
 
-`bench/results/` に `<日時>_<ブランチ@sha>.json` で残るので、最適化前後や別ブランチのファイルを見比べる。
+`--save` を付けると `bench/results/` に `<日時>_<ブランチ@sha>.json` で残るので、最適化前後や別ブランチのファイルを見比べる。基準にしたい計測だけ保存する。
+
+## 回帰確認（validate.mjs）
+
+トークン数だけでは、圧縮で手順が抜けたことは分からない。生成物の構造で確かめる。
+
+```
+node bench/validate.mjs                     # specs/ 以下すべて
+node bench/validate.mjs specs/001-xxx       # 指定した feature だけ
+node bench/validate.mjs --root DIR          # 別ディレクトリ
+```
+
+検査内容: spec.md の必須セクション・ユーザーストーリー・FR/SC の ID（重複・連番）・NEEDS CLARIFICATION ≤ 3・テンプレートのプレースホルダ残り、checklists/requirements.md の有無、plan.md の必須セクションと research.md / quickstart.md、tasks.md のタスク形式・ID 連番・`[USn]` とフェーズの対応・全ストーリーのフェーズ有無。エラーがあれば終了コード 1、警告は表示のみ。内容の良し悪しは見ない。
+
+スキルを変えたら、使い捨てのディレクトリ（`.claude/` と `.specify/` をコピーしたもの）で次のお題を specify → plan → tasks まで回し、`node bench/validate.mjs --root <そのディレクトリ>` を通す。
+
+> お題: 計測結果の JSON から、スキルごとのトークン数を Markdown の表として出力する `--markdown` オプションを追加する。表は本文・参照・合計の列を持ち、合計の降順に並べる。
 
 ## 結果の比較（--compare）
 

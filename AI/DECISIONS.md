@@ -14,3 +14,5 @@
 - **`context/` はサブモジュールとして main に含める**（他プロジェクトで既に入っている場合はそちらを使う）
 - **任意スキル**（analyze / checklist / converge / taskstoissues）は未最適化のまま残している。使う時に同じ方式で圧縮する
 - **計測の基準**: `bench/measure.mjs`。目標は常時 ≤ 400（キット分）、core ≤ 8,000
+- **動作環境**: Windows 専用（スクリプトは PowerShell 版のみ）。bash 版の移植や pwsh 前提化はしない
+- **計測結果の保存**: `measure.mjs` は既定で保存しない。基準にしたい時だけ `--save`

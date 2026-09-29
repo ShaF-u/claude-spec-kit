@@ -18,7 +18,7 @@ Run this before `/speckit-plan`. If the user explicitly skips clarification (e.g
 
 ## 1. Locate the spec
 
-Run `.specify/scripts/powershell/check-prerequisites.ps1 -Json -PathsOnly` once from the repo root and parse `FEATURE_DIR`, `FEATURE_SPEC` (single quotes in args: `'I'\''m Groot'`). Parse failure → abort, tell the user to re-run `/speckit-specify` or check the feature environment. Spec missing → tell the user to run `/speckit-specify` first; never create one here. Read `.specify/memory/constitution.md` if it exists.
+Run `.specify/scripts/powershell/check-prerequisites.ps1 -Json -PathsOnly` once from the repo root and parse `FEATURE_DIR`, `FEATURE_SPEC` (single quotes in args: `'I''m Groot'`). Parse failure → abort, tell the user to re-run `/speckit-specify` or check the feature environment. Spec missing → tell the user to run `/speckit-specify` first; never create one here. Read `.specify/memory/constitution.md` if it exists.
 
 ## 2. Coverage scan (internal)
 

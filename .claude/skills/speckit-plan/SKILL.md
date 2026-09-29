@@ -16,7 +16,7 @@ disable-model-invocation: false
 
 ## 1. Setup
 
-Run `.specify/scripts/powershell/setup-plan.ps1 -Json` from the repo root; parse `FEATURE_SPEC`, `IMPL_PLAN`, `FEATURE_DIR`, `BRANCH` (single quotes in args: `'I'\''m Groot'`). Read FEATURE_SPEC and `.specify/memory/constitution.md`. IMPL_PLAN already contains the plan template.
+Run `.specify/scripts/powershell/setup-plan.ps1 -Json` from the repo root; parse `FEATURE_SPEC`, `IMPL_PLAN`, `FEATURE_DIR`, `BRANCH` (single quotes in args: `'I''m Groot'`). Read FEATURE_SPEC and `.specify/memory/constitution.md`. IMPL_PLAN already contains the plan template.
 
 ## 2. Fill the plan (template structure)
 

@@ -16,7 +16,7 @@ disable-model-invocation: false
 
 ## 1. Prerequisites
 
-Run `.specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks` from the repo root; parse `FEATURE_DIR` and `AVAILABLE_DOCS` (absolute paths; single quotes in args: `'I'\''m Groot'`). No or incomplete tasks.md → tell the user to run `/speckit-tasks` first.
+Run `.specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks` from the repo root; parse `FEATURE_DIR` and `AVAILABLE_DOCS` (absolute paths; single quotes in args: `'I''m Groot'`). No or incomplete tasks.md → tell the user to run `/speckit-tasks` first.
 
 ## 2. Checklist gate (if `FEATURE_DIR/checklists/` exists)
 

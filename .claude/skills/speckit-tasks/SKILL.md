@@ -16,7 +16,7 @@ disable-model-invocation: false
 
 ## 1. Setup
 
-Run `.specify/scripts/powershell/setup-tasks.ps1 -Json` from the repo root; parse `FEATURE_DIR`, `TASKS_TEMPLATE_CONTENT` (older scripts: read `TASKS_TEMPLATE` instead), `AVAILABLE_DOCS` (single quotes in args: `'I'\''m Groot'`).
+Run `.specify/scripts/powershell/setup-tasks.ps1 -Json` from the repo root; parse `FEATURE_DIR`, `TASKS_TEMPLATE_CONTENT` (older scripts: read `TASKS_TEMPLATE` instead), `AVAILABLE_DOCS` (single quotes in args: `'I''m Groot'`).
 
 Read from FEATURE_DIR: `plan.md` (tech stack, libraries, structure) and `spec.md` (user stories with priorities) — required; `data-model.md`, `contracts/`, `research.md`, `quickstart.md` if present; `.specify/memory/constitution.md` if it exists. Missing optional docs are fine — generate from what exists.
 
