@@ -15,5 +15,5 @@
 - **任意スキル**（analyze / checklist / converge / taskstoissues）は未最適化のまま残している。使う時に同じ方式で圧縮する
 - **計測の基準**: `bench/measure.mjs`。目標は常時 ≤ 400（キット分）、core ≤ 8,000
 - **動作環境**: Windows 専用（スクリプトは PowerShell 版のみ）。bash 版の移植や pwsh 前提化はしない
-- **Git 操作スキル**（`git-*`）は `disable-model-invocation: true`。/ で呼ぶ専用にして自動発火（勝手なコミット・プッシュ）を防ぎ、一覧コストも 0 にする。ブランチ作成・切替・force push はしない
+- **Git 操作スキル**（`/git-commit` `/git-branches` `/git-sync`）はユーザースコープ（`~/.claude/skills/`）に置き、このリポジトリには含めない。ここはスペックキット開発用のため。`disable-model-invocation: true` で / 専用（自動でコミット・プッシュさせない、一覧コストも 0）。ブランチ作成・切替・force push はしない
 - **計測結果の保存**: `measure.mjs` は既定で保存しない。基準にしたい時だけ `--save`

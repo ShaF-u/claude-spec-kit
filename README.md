@@ -25,14 +25,6 @@ core の値は constitution.md の分量で変わる（制定前は 6,113）。
 /speckit-implement      tasks.md をサブエージェントに委譲して実行し、検証してから完了報告
 ```
 
-Git 操作（/ で呼ぶ専用、起動時コスト 0）:
-
-```
-/git-commit [メッセージのヒント] [--no-push]  変更を見て STRUCTURE/README/CLAUDE.md 等を必要なら更新 → コミット → プッシュ。やったことを報告
-/git-branches [--offline]  ローカル/リモートの全ブランチ、追跡状態、マージ済み候補、stash、worktree を一覧
-/git-sync                  fetch して現在のブランチを fast-forward（分岐時は止めて確認）
-```
-
 生成物と報告は日本語。ブランチの作成・切替はスキルは行わない。
 
 ## 他プロジェクトへ持っていく
