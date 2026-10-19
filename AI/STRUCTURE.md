@@ -5,6 +5,7 @@
 | `.claude/skills/speckit-*/` | スペックキット本体。`SKILL.md` は薄く、条件付きの詳細は `rules/*.md` |
 | `.claude/skills/{verification-before-completion,systematic-debugging,test-driven-development}/` | superpowers 由来の汎用スキル（実装・デバッグ時に使う） |
 | `.claude/skills/gh-*/` | akiojin 由来の GitHub PR/Issue スキル |
+| `.claude/skills/git-*/` | Git 操作（`/git-commit` コミット＋ドキュメント同期＋プッシュ、`/git-branches` ブランチ一覧、`/git-sync` ff 取り込み）。/ で呼ぶ専用 |
 | `.specify/templates/` | spec / plan / tasks / constitution / checklist のテンプレート（スキルがコピーして使う） |
 | `.specify/scripts/powershell/` | feature ディレクトリ作成や前提確認のスクリプト（スキルが実行する） |
 | `.specify/memory/constitution.md` | プロジェクト原則。各スキルが読む |

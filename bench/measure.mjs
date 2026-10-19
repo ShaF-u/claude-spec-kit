@@ -135,10 +135,13 @@ function describeInvocable(name, file) {
       if (abs) reads.push({ file: rel(abs), tokens: estimateTokens(read(abs)), conditional });
     }
   }
+  // disable-model-invocation: true のスキルは / で呼ぶ専用で、一覧行が
+  // モデルのコンテキストに乗らない（起動時コスト 0）。
+  const userOnly = frontmatter['disable-model-invocation'] === 'true';
   return {
     name,
     file: rel(file),
-    listingTokens: estimateTokens(listing),
+    listingTokens: userOnly ? 0 : estimateTokens(listing),
     bodyTokens: estimateTokens(body),
     reads,
     readsTokens: reads.filter((r) => !r.conditional).reduce((a, r) => a + r.tokens, 0),
