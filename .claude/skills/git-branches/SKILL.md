@@ -13,7 +13,7 @@ Read-only overview of the repository's branches. Do not create, switch, delete, 
 2. Default branch: `git symbolic-ref --short refs/remotes/origin/HEAD` (fallback `main`).
 3. Collect (run in parallel):
    - Local: `git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)|%(refname:short)|%(upstream:short)|%(upstream:track)|%(committerdate:short)|%(objectname:short)|%(subject)'`
-   - Remote: `git for-each-ref --sort=-committerdate refs/remotes --format='%(refname:short)|%(committerdate:short)|%(objectname:short)|%(subject)'` (skip `*/HEAD`)
+   - Remote: `git for-each-ref --sort=-committerdate refs/remotes --format='%(symref)|%(refname:short)|%(committerdate:short)|%(objectname:short)|%(subject)'` (skip rows whose first field is non-empty: that is `origin/HEAD`, shown as just `origin`)
    - Merged into default: `git branch --merged <default> --format='%(refname:short)'`
    - `git status -sb`, `git stash list`, `git worktree list`
 4. Remote branches with no local counterpart are "リモートのみ".
