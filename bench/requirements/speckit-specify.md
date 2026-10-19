@@ -11,6 +11,7 @@
 - [ ] 迷う場合は `specs/*/spec.md` をキーワード検索: 1件→更新、複数→候補提示して選択、0件→新規
 
 ## 新規作成
+- [ ] リポジトリ直下に `.specify/` が無ければ先に `~/.claude/speckit/specify/` を `.specify/` としてコピーし、その旨を伝える
 - [ ] 2〜4語の short-name（action-noun、技術用語は保持、例: user-auth）
 - [ ] ブランチは作成・切替しない（ユーザー管理）。ディレクトリ名とブランチ名は独立
 - [ ] `SPECIFY_FEATURE_DIRECTORY` はユーザー指定があればそれ、なければ `specs/<prefix>-<short-name>`

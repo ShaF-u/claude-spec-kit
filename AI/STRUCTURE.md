@@ -12,10 +12,12 @@
 | `bench/` | コンテキスト量ベンチマーク。`measure.mjs` が本体（`--compare` で2結果の差分）、`lib/compare.mjs` が比較ロジック、`validate.mjs` が生成物の構造検査（`lib/artifacts.mjs`）、`requirements/` は各スキルの要件チェックリスト、`results/` は `--save` した計測履歴 |
 | `Docs/` | 人向け。`kit-comparison.md` は他キットとの比較と取り込み方針 |
 | `context/` | サブモジュール。`context/Core` が MCP サーバー（ユーザースコープに登録、設定はルートの `aistudio.config`）、`context/AI` `Shared` がテンプレート原本 |
+| `install.mjs` | キットをユーザースコープへ入れる（`~/.claude/skills/` と `.specify` 雛形 `~/.claude/speckit/specify/`） |
 | `THIRD_PARTY_NOTICES.md` | 同梱スキルの出典とライセンス |
 
 ## 主要機能とその場所
 - 仕様→計画→タスク→実装の流れ: `speckit-specify` → (`speckit-clarify`) → `speckit-plan` → `speckit-tasks` → `speckit-implement`
+- 全プロジェクトへ反映: `node install.mjs`（キットを変えたら毎回）
 - 計測: `node bench/measure.mjs`（`--root DIR` で他プロジェクトも測れる）、比較: `node bench/measure.mjs --compare [A B]`
 - 生成物の検査: `node bench/validate.mjs`（`--root DIR` 可）
 - テスト: `node --test "bench/**/*.test.mjs"`（`node --test bench/` は Node 24 では動かない）

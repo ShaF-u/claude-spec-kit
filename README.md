@@ -27,12 +27,17 @@ core の値は constitution.md の分量で変わる（制定前は 6,113）。
 
 生成物と報告は日本語。ブランチの作成・切替はスキルは行わない。
 
-## 他プロジェクトへ持っていく
+## 全プロジェクトで使う
 
-1. `.claude/skills/speckit-*/` と `.specify/` をコピーする。
-2. 汎用スキルが欲しければ `.claude/skills/` の残り（`verification-before-completion` 等）と `THIRD_PARTY_NOTICES.md` も。
-3. `context/`（context-templates）を使うなら `git submodule add https://github.com/ShaF-u/claude-context-templates.git context` し、`context/` 内で Core をビルドする。MCP サーバーの登録は **ユーザースコープに1度だけ**（`claude mcp add --scope user`、詳細は `context/README.md`）。プロジェクト側に置くのは `aistudio.config` 1ファイルだけで、`.mcp.json` は不要。
-4. `AI/STRUCTURE.md` `AI/DECISIONS.md` はそのプロジェクトの内容に書き換える。
+```
+node install.mjs
+```
+
+speckit スキル（と implement が使う TDD・verification）を `~/.claude/skills/` へ、`.specify/` の雛形を `~/.claude/speckit/specify/` へコピーする。どのプロジェクトでも `/speckit-*` が使え、`.specify/` が無ければ `/speckit-specify` か `/speckit-constitution` の初回で自動で作られる。
+
+**キットを変更するときはこのリポジトリで編集する**（原本はここ）。`bench` で計測・検査してから `node install.mjs` で反映。ユーザースコープの方が優先されるので、このリポジトリ内でも install するまで変更は効かない。`~/.claude/skills/speckit-*` を直接編集しても次の install で上書きされる。
+
+`context/`（Core MCP）を使うなら `git submodule add https://github.com/ShaF-u/claude-context-templates.git context` し、`context/` 内で Core をビルドしてユーザースコープに1度だけ登録（`claude mcp add --scope user`、詳細は `context/README.md`）。プロジェクト側に置くのは `aistudio.config` だけ。
 
 ## 計測
 

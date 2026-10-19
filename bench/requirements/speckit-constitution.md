@@ -8,6 +8,7 @@
 - [ ] deferred があれば最後に `Next Actions` を出し、元の意図と適切な後続コマンド（/speckit-specify 等）を提案（呼び出さない）。無ければ省略
 
 ## 手順
+- [ ] リポジトリ直下に `.specify/` が無ければ先に `~/.claude/speckit/specify/` を `.specify/` としてコピーし、その旨を伝える
 - [ ] `resolve-template.ps1 constitution-template -Json` を実行し TEMPLATE_CONTENT を得る。失敗したら停止して報告（1レイヤーだけで続けない）
 - [ ] 既存の constitution.md があれば現在値・修正履歴の情報源として読み、まだ有効な情報は保持。無ければテンプレートを初期文書に
 - [ ] テンプレートのレイヤーには書き戻さない

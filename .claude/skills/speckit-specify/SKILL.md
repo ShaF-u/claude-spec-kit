@@ -16,6 +16,8 @@ disable-model-invocation: false
 
 Artifacts and reports are written in Japanese. Never create or switch git branches (user-managed).
 
+No `.specify/` at the repo root → first copy `~/.claude/speckit/specify/` there as `.specify/` and tell the user.
+
 ## 1. New spec or existing spec?
 
 - Input names an existing spec directory/file, or says 追記/既存 → update that spec.
