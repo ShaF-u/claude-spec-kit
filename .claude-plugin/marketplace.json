@@ -1,0 +1,14 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
+  "name": "speckit",
+  "description": "コンテキスト消費を抑えた Claude Code 向けスペックキット（spec → plan → tasks → implement）と汎用・GitHub スキル",
+  "owner": { "name": "ShaF-u", "url": "https://github.com/ShaF-u" },
+  "plugins": [
+    {
+      "name": "speckit",
+      "description": "コンテキスト消費を抑えた Claude Code 向けスペックキット（spec → plan → tasks → implement）と汎用・GitHub スキル",
+      "source": "./",
+      "category": "development"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ This command only edits `.specify/memory/constitution.md`. Classify every part o
 
 ## 1. Resolve the scaffold
 
-No `.specify/` at the repo root → first copy `~/.claude/speckit/specify/` there as `.specify/` and tell the user.
+No `.specify/` at the repo root → first create it and tell the user: as a plugin, copy `.gitignore`, `init-options.json`, `templates/`, `scripts/` from `${CLAUDE_PLUGIN_ROOT}/.specify/`; otherwise copy `~/.claude/speckit/specify/`.
 Run `.specify/scripts/powershell/resolve-template.ps1 constitution-template -Json` from the repo root and use `TEMPLATE_CONTENT` as the structure. Failure → stop and report; never continue with a partial template. If `.specify/memory/constitution.md` exists, read it as the source of current values and amendments and keep whatever still applies; otherwise the template is the initial document. Never write back to template layers. Find every `[ALL_CAPS]` placeholder; if the user asked for a specific number of principles, follow it.
 
 ## 2. Values

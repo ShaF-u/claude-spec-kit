@@ -1,0 +1,7 @@
+{
+  "name": "speckit",
+  "description": "コンテキスト消費を抑えた Claude Code 向けスペックキット（spec → plan → tasks → implement）と汎用・GitHub スキル",
+  "author": { "name": "ShaF-u", "url": "https://github.com/ShaF-u" },
+  "repository": "https://github.com/ShaF-u/claude-spec-kit",
+  "skills": "./.claude/skills/"
+}

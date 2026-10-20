@@ -29,6 +29,17 @@ core の値は constitution.md の分量で変わる（制定前は 6,113）。
 
 ## 全プロジェクトで使う
 
+プラグインとして入れる（推奨。ここの `.claude/skills/` 全部が入り、`/plugin` から更新できる）:
+
+```
+claude plugin marketplace add ShaF-u/claude-spec-kit
+claude plugin install speckit@speckit
+```
+
+コマンドは `/speckit:speckit-plan` の形になる（`/speckit-plan` と打てば補完される）。`.specify/` が無ければ初回の `/speckit-specify` か `/speckit-constitution` がプラグイン内の雛形から作る。
+
+プラグインを使わない場合:
+
 ```
 node install.mjs
 ```

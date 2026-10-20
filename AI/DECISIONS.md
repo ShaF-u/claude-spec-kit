@@ -15,6 +15,7 @@
 - **任意スキル**（analyze / checklist / converge / taskstoissues）は未最適化のまま残している。使う時に同じ方式で圧縮する
 - **計測の基準**: `bench/measure.mjs`。目標は常時 ≤ 400（キット分）、core ≤ 8,000
 - **動作環境**: Windows 専用（スクリプトは PowerShell 版のみ）。bash 版の移植や pwsh 前提化はしない
-- **Git 操作スキル**（`/git-commit` `/git-branches` `/git-sync`）はユーザースコープ（`~/.claude/skills/`）に置き、このリポジトリには含めない。ここはスペックキット開発用のため。`disable-model-invocation: true` で / 専用（自動でコミット・プッシュさせない、一覧コストも 0）。ブランチ作成・切替・force push はしない
-- **speckit はユーザースコープで使う**: 原本はこのリポジトリ（git 管理・bench 計測対象）、`node install.mjs` で `~/.claude/skills/`（speckit-* と implement が呼ぶ TDD・verification）と `~/.claude/speckit/specify/`（.specify 雛形、constitution は含めない）へコピー。`.specify/` が無いプロジェクトでは specify / constitution が雛形を自動コピーする。同名ならユーザースコープが優先されるので、このリポジトリでも変更は install 後に効く
+- **Git 操作スキル**（`/git-commit` `/git-branches` `/git-sync`）は別リポジトリ `ShaF-u/claude-git-skills`（プラグイン `git-skills`）で配布し、このリポジトリには含めない。ここはスペックキット開発用のため。`disable-model-invocation: true` で / 専用（自動でコミット・プッシュさせない、一覧コストも 0）。ブランチ作成・切替・force push はしない
+- **speckit はプラグインで配布する**: `.claude-plugin/` でこのリポジトリ自体をマーケットプレイス兼プラグイン `speckit` にする（`claude-` で始まる名前は予約済みで使えない）。雛形はプラグイン内の `.specify/` から作る
+- **speckit はユーザースコープでも使える**: 原本はこのリポジトリ（git 管理・bench 計測対象）、`node install.mjs` で `~/.claude/skills/`（speckit-* と implement が呼ぶ TDD・verification）と `~/.claude/speckit/specify/`（.specify 雛形、constitution は含めない）へコピー。`.specify/` が無いプロジェクトでは specify / constitution が雛形を自動コピーする。同名ならユーザースコープが優先されるので、このリポジトリでも変更は install 後に効く
 - **計測結果の保存**: `measure.mjs` は既定で保存しない。基準にしたい時だけ `--save`
